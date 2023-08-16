@@ -1,0 +1,55 @@
+﻿1
+00:00:04,996 --> 00:00:07,596
+Inicialmente tenemos creado el archivo docker-compose.yml en el directorio actual
+
+2
+00:00:09,743 --> 00:00:17,551
+ejecute el siguiente comando en el directorio raíz de su docker-compos earchivo para iniciar un clúster local de Redpanda:
+
+3
+00:00:18,450 --> 00:00:20,050
+docker-compose up -d
+
+4
+00:00:29,834 --> 00:00:34,378
+Aqui se puede observar  que los serviores ha sido ejecutados en docker
+
+5
+00:00:52,730 --> 00:01:00,730
+Para iniciar ksqlDB y acceder a su interfaz, ejecute el siguiente comando:
+docker exec -it ksqldb-cli ksql http://ksqldb-server:8088
+
+6
+00:01:14,664 --> 00:01:22,451
+en el siguiente comando creamos stream llamado tp2 y
+ un topic de redpanda  llamado stock-updates
+
+7
+00:01:37,287 --> 00:01:41,831
+con el siguiente comando  creamos una vista materializada.
+
+8
+00:01:42,261 --> 00:01:48,533
+en este caso el promedio ponderado de precio de una unidad 
+por cada uno de los símbolos procesados
+
+9
+00:01:49,262 --> 00:01:50,262
+y tambien el numero transacciones se procesaron por símbolo
+
+10
+00:02:03,994 --> 00:02:04,994
+  creamos otra vista materializada.
+
+11
+00:02:09,464 --> 00:02:13,368
+obtieniendo el mínimo y maximo  precio registrado por símbolo
+
+12
+00:02:38,386 --> 00:02:39,386
+cargamos  el producer para cargar el topic
+
+13
+00:03:22,797 --> 00:03:26,061
+realizamos las consultas por las vistas creadas..!!
+
